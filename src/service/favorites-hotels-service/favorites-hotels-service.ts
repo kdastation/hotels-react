@@ -39,6 +39,13 @@ export class FavoritesHotelsService {
     return sortedHotels;
   }
 
+  /**
+   * Метод, определяющий, какого вида сортировка: по убыванию или по возрастанию
+   * @param arg1 - первый аргумент
+   * @param arg2 - второй
+   * @param isDesc - по убыванию?
+   * @private
+   */
   private static descOrAsc(arg1: number, arg2: number, isDesc: boolean) {
     return isDesc ? arg1 - arg2 : arg2 - arg1;
   }

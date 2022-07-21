@@ -1,5 +1,4 @@
 import { FC, useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { IParamsApiHotels } from "../../types/params-api-hotels";
 import { fetchHotels } from "../../redux/slices/hotels-slice";
@@ -8,11 +7,11 @@ import { HotelsSelector } from "../../redux/selectors/hotels-selector";
 import { Hotel } from "../hotel/hotel";
 import classNames from "classnames";
 import { CountFavoritesHotels } from "../count-favorites-hotelts/count-favorites-hotels";
-import styles from "./hotels.module.scss";
 import { SliderHotelsImages } from "../slider-hotels-images/slider-hotels-images";
 import { ServiceDate } from "../../service/service-date/service-date";
 import { WrapperLoaderError } from "../../utils-components/wrapper-loader-error/wrapper-loader-error";
 import { Loader } from "../../ui-components/loader/loader";
+import styles from "./hotels.module.scss";
 
 interface HotelsProps {
   filtersHotels: FiltersHotelsFields;
@@ -21,9 +20,11 @@ interface HotelsProps {
 const Hotels: FC<HotelsProps> = (props) => {
   const { filtersHotels } = props;
   const dispatch = useDispatch();
+
   const { hotels, isError, isLoading } = useSelector(
     HotelsSelector.getFullState
   );
+
   useEffect(() => {
     const params: IParamsApiHotels = {
       startDate: filtersHotels.date,
@@ -32,6 +33,7 @@ const Hotels: FC<HotelsProps> = (props) => {
     };
     dispatch(fetchHotels(params));
   }, [filtersHotels]);
+
   return (
     <div className={styles.hotels}>
       <div className={styles.hotels__top}>

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { FormLogin } from "../../components/forms/form-login";
+import { FormLogin } from "../../components/forms/form-login/form-login";
 import { Modal } from "../../ui-components/modal/modal";
 import styles from "./sign-in-page.module.scss";
 

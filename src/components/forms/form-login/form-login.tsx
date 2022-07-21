@@ -1,13 +1,15 @@
 import { FC } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { TextField } from "../../ui-components/text-field/text-field";
+import { TextField } from "../../../ui-components/text-field/text-field";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { validatorsLoginForm } from "../../validators/validators-login-form";
-import { Button } from "../../ui-components/button/button";
-import { useSubmitData } from "../../hooks/submit-data-hook";
+import { validatorsLoginForm } from "../../../validators/validators-login-form";
+import { Button } from "../../../ui-components/button/button";
+import { useSubmitData } from "../../../hooks/submit-data-hook";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/slices/auth-slice";
+import { login } from "../../../redux/slices/auth-slice";
 import styles from "./form-login.module.scss";
+import { useNavigate } from "react-router-dom";
+import { RoutesPathNames } from "../../../router/routes-path-names";
 
 export interface FormLoginFields {
   login: string;
@@ -16,6 +18,7 @@ export interface FormLoginFields {
 
 const FormLogin: FC = () => {
   const dispatch = useDispatch();
+  const navigation = useNavigate();
   const { handleSubmit, control } = useForm<FormLoginFields>({
     mode: "onBlur",
     resolver: yupResolver(validatorsLoginForm),
@@ -24,6 +27,7 @@ const FormLogin: FC = () => {
   const { submitData: submitLogin, messageError } = useSubmitData(
     async (data: FormLoginFields) => {
       await dispatch(login(data));
+      navigation(RoutesPathNames.HOTELS_PAGE);
     }
   );
 

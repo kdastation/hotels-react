@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { FavoritesHotelsSelector } from "../../redux/selectors/favorites-hotels-selector";
 import { Hotel } from "../hotel/hotel";
 import { FavoritesHotelsService } from "../../service/favorites-hotels-service/favorites-hotels-service";
-import { FiltersFavoritesHotels } from "../filters-favorites-hotels/filters-favorites-hotels";
+import { MemoFiltersFavoritesHotels } from "../filters-favorites-hotels/filters-favorites-hotels";
 import styles from "./favorites-hotels.module.scss";
 
 const FavoritesHotels: FC = () => {
@@ -14,6 +14,7 @@ const FavoritesHotels: FC = () => {
   const informationFilters = useSelector(
     FavoritesHotelsSelector.getInformationFilters
   );
+
   const sortedHotels = useMemo(() => {
     return FavoritesHotelsService.sortHotels(
       favoritesHotels,
@@ -21,11 +22,15 @@ const FavoritesHotels: FC = () => {
       informationFilters
     );
   }, [favoritesHotels, methodSort, informationFilters]);
+
   return (
     <div className={styles.favorites_hotels}>
       <h3 className={styles.favorites_hotels__title}>Избранное</h3>
       <div className={styles.favorites_hotels__filters}>
-        <FiltersFavoritesHotels />
+        <MemoFiltersFavoritesHotels
+          informationFilters={informationFilters}
+          sortMethod={methodSort}
+        />
       </div>
       <div>
         {sortedHotels.map((favoriteHotel) => {
@@ -45,4 +50,5 @@ const FavoritesHotels: FC = () => {
 };
 
 const MemoFavoritesHotels = memo(FavoritesHotels);
+
 export { FavoritesHotels, MemoFavoritesHotels };

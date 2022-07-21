@@ -1,17 +1,20 @@
 import { FilterButton } from "../../ui-components/filter-button/filter-button";
 import { useDispatch, useSelector } from "react-redux";
-import { FavoritesHotelsSelector } from "../../redux/selectors/favorites-hotels-selector";
 import { dataFiltersFavoritesHotels } from "../../data-components/data-filters-favorites-hotels";
-import { FC } from "react";
+import { FC, memo } from "react";
 import { changeSortMethod } from "../../redux/slices/favorites-hotels-slice";
+import { TSortMethodFavoritesHotels } from "../../types/sort-method-favorites-hotels";
+import { IFiltersFavoritesHotels } from "../../types/filters-favorites-hotels";
 import styles from "./filters-favorites-hotels.module.scss";
 
-const FiltersFavoritesHotels: FC = () => {
+interface FiltersFavoritesHotelsProps {
+  sortMethod: TSortMethodFavoritesHotels;
+  informationFilters: IFiltersFavoritesHotels;
+}
+
+const FiltersFavoritesHotels: FC<FiltersFavoritesHotelsProps> = (props) => {
+  const { sortMethod, informationFilters } = props;
   const dispatch = useDispatch();
-  const sortMethod = useSelector(FavoritesHotelsSelector.getSortMethod);
-  const informationFilters = useSelector(
-    FavoritesHotelsSelector.getInformationFilters
-  );
 
   return (
     <div className={styles.filters_favorite_hotels}>
@@ -36,4 +39,6 @@ const FiltersFavoritesHotels: FC = () => {
   );
 };
 
-export { FiltersFavoritesHotels };
+const MemoFiltersFavoritesHotels = memo(FiltersFavoritesHotels);
+
+export { FiltersFavoritesHotels, MemoFiltersFavoritesHotels };

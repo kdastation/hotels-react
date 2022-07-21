@@ -43,8 +43,8 @@ export const favoritesHotelsSlice = createSlice({
     changeSortMethod(state, action: PayloadAction<TSortMethodFavoritesHotels>) {
       const receivedSortMethod = action.payload;
       if (state.sortMethod === receivedSortMethod) {
-        state.filters[receivedSortMethod].isDown =
-          !state.filters[receivedSortMethod].isDown;
+        const filter = state.filters[receivedSortMethod];
+        filter.isDown = !filter.isDown;
       } else {
         state.sortMethod = receivedSortMethod;
       }

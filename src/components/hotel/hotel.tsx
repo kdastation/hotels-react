@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { addOrRemoveHotel } from "../../redux/slices/favorites-hotels-slice";
 import { IFavoriteHotel } from "../../types/models/favorite-hotel-model";
 import { ServiceDate } from "../../service/service-date/service-date";
+import { SettingHotel } from "../../settings/setting-hotel";
 import styles from "./hotel.module.scss";
 
 interface HotelProps {
@@ -49,7 +50,10 @@ const Hotel: FC<HotelProps> = (props) => {
           Price: <span>{hotel.priceAvg} ₽</span>
         </div>
         <div>
-          <Stars countStars={5} countActiveStars={hotel.stars} />
+          <Stars
+            countStars={SettingHotel.MAX_COUNT_STARS}
+            countActiveStars={hotel.stars}
+          />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { IUser } from "../../types/models/user-model";
-import { FormLoginFields } from "../../components/forms/form-login";
+import { FormLoginFields } from "../../components/forms/form-login/form-login";
 import AuthService from "../../service/auth-service/auth-service";
 
 interface initialStateAuth {

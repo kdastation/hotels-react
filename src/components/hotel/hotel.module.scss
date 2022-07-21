@@ -1,0 +1,83 @@
+@import "../../styles/variables";
+
+.hotel {
+  background-color: $color_white;
+  border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  padding: 1.9rem 0 1.6rem 0;
+  overflow-wrap: break-word;
+  &__name {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+    font-weight: 300;
+    color: #424242;
+    padding-right: 4rem;
+  }
+
+  &__date {
+    color: #878787;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2.4rem;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 2.2rem;
+    letter-spacing: -0.408px;
+    color: #878787;
+    span {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.7rem;
+      line-height: 2.2rem;
+      color: #424242;
+    }
+    @media (max-width: 490px) {
+      position: static;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__left {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(65, 82, 46, 0.05);
+    border-radius: 50%;
+    position: relative;
+    margin-right: 2.4rem;
+    @media (max-width: 490px) {
+      display: none;
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+  }
+  &__image {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media (max-width: 490px) {
+      display: none;
+    }
+  }
+
+  &__like {
+    position: absolute;
+    top: 1.6rem;
+    right: 2.4rem;
+  }
+}

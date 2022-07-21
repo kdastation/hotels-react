@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.filter_button {
+  background: $color_white;
+  border: 1px solid #41522e;
+  border-radius: 0.2857em;
+  font-size: 1.4rem;
+  color: #41522e;
+  padding: 0.2857em 2.1428em 0.2857em 0.5714em;
+  font-weight: 400;
+  position: relative;
+  &__disabled {
+    color: #99a0a3;
+    border: 1px solid #e5e5e5;
+  }
+  &__select_up {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  &__select_down {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+}

@@ -1,0 +1,14 @@
+.like_icon {
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    path {
+      fill: #ebebeb;
+    }
+  }
+  &:active {
+    path {
+      fill: #e55858;
+    }
+  }
+}

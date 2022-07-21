@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+.hotels_page {
+  display: flex;
+  gap: 2.4rem;
+  padding-bottom: 3.2rem;
+  &__left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 360px;
+  }
+  &__filters_hotels {
+    margin-bottom: 2.4rem;
+  }
+  @media (max-width: $adaptive_width) {
+    flex-direction: column;
+  }
+}

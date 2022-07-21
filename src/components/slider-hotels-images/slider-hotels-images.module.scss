@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.slide {
+  width: 164px;
+  height: 149px;
+  img {
+    width: 164px;
+    height: 149px;
+    object-fit: cover;
+  }
+}
+.slider {
+  max-width: 574px;
+  width: 100%;
+  @media (max-width: $adaptive_width) {
+    max-width: none;
+  }
+}

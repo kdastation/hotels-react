@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.button {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $color_white;
+  padding: 1em 0;
+  background: linear-gradient(104.34deg, #41522e -15.34%, #be8022 145.95%);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+  border-radius: 0.25em;
+  text-align: center;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      linear-gradient(104.34deg, #41522e -15.34%, #be8022 145.95%);
+  }
+  &:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(104.34deg, #41522e -15.34%, #be8022 145.95%);
+  }
+}

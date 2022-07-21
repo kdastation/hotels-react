@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.text_field_control {
+  &__title {
+    color: $color_dark;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 0.7rem;
+  }
+  &__title__strong {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.9rem;
+    color: $color_dark;
+  }
+  &_helper_text {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: left;
+    margin-top: 0.7rem;
+  }
+}
+
+.text_field {
+  padding: 0.9375em;
+  font-size: 1.6rem;
+  border: 1px solid #c9cacc;
+  border-radius: 0.25em;
+  width: 100%;
+  background-color: $color_white;
+  outline: none;
+}
+
+.error {
+  color: #eb1717;
+}

@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+.filters_hotels {
+  padding: 3.2rem;
+  background-color: $color_white;
+  &__button {
+    margin-top: 3.2rem;
+  }
+  &__text_field {
+    margin-bottom: 1.6rem;
+  }
+}

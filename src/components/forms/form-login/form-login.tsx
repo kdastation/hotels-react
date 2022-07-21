@@ -66,9 +66,10 @@ const FormLogin: FC = () => {
                 defaultProps={{
                   ...field,
                   value: field.value || "",
+                  type: "password",
                 }}
                 settings={{
-                  title: "Логин",
+                  title: "Пароль",
                   isError:
                     Boolean(fieldState.error?.message) || Boolean(messageError),
                   helperText: fieldState.error?.message || messageError,

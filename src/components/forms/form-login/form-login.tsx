@@ -80,7 +80,7 @@ const FormLogin: FC = () => {
         }}
       />
       <div className={styles.button_wrapper}>
-        <Button type="submit">Логин</Button>
+        <Button type="submit">Войти</Button>
       </div>
     </form>
   );
